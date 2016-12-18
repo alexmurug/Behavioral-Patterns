@@ -18,7 +18,7 @@ namespace StrategyPattern
 
             strategyContext = new StrategyContext(new MerryChristmasDiscount());
             strategyContext.ContextInterface(100);
-            
+
 
             Console.ReadKey();
         }

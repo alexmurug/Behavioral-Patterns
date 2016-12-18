@@ -11,11 +11,12 @@ namespace ObserverPattern
             _name = name;
         }
 
+        public Taxi Taxi { get; set; }
+
         public void Update(Taxi taxi)
         {
-            Console.WriteLine("{0} ! Notified {1} of {2}'s " + "change to {3:C}", taxi.Message, _name, taxi.Type, taxi.Price);
+            Console.WriteLine("{0} ! Notified {1} of {2}'s " + "change to {3:C}", taxi.Message, _name, taxi.Type,
+                taxi.Price);
         }
-
-        public Taxi Taxi { get; set; }
     }
 }

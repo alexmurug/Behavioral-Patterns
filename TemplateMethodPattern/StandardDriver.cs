@@ -13,7 +13,5 @@ namespace TemplateMethodPattern
         {
             Console.WriteLine("Maintaing company Car");
         }
-
-      
     }
 }

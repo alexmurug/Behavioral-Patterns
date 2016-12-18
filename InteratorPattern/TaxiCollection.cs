@@ -6,11 +6,6 @@ namespace InteratorPattern
     {
         private readonly ArrayList _items = new ArrayList();
 
-        public Iterator CreateIterator()
-        {
-            return new Iterator(this);
-        }
-
         public int Count
         {
             get { return _items.Count; }
@@ -22,5 +17,9 @@ namespace InteratorPattern
             set { _items.Add(value); }
         }
 
+        public Iterator CreateIterator()
+        {
+            return new Iterator(this);
+        }
     }
 }

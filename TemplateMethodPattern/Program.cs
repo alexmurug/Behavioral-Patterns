@@ -6,7 +6,6 @@ namespace TemplateMethodPattern
     {
         public static void Main(string[] args)
         {
-
             HireTaxist staandardTaxist = new StandardDriver();
             staandardTaxist.MonthAction();
 

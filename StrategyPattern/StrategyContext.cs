@@ -3,6 +3,7 @@
     public class StrategyContext
     {
         private readonly PriceStrategy _priceStrategy;
+
         public StrategyContext(PriceStrategy priceStrategy)
         {
             _priceStrategy = priceStrategy;

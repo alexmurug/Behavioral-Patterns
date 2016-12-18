@@ -4,7 +4,7 @@ namespace InteratorPattern
 {
     public class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // Build a collection
             var computerCollection = new TaxiCollection
@@ -18,14 +18,12 @@ namespace InteratorPattern
 
 
             var iterator = computerCollection.CreateIterator();
-           
+
 
             Console.WriteLine("Collection iteration:\n");
 
             for (var item = iterator.First(); !iterator.IsDone; item = iterator.Next())
-            {
                 Console.WriteLine(item.Name);
-            }
 
             Console.ReadKey();
         }

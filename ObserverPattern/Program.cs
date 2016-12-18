@@ -6,7 +6,6 @@ namespace ObserverPattern
     {
         private static void Main(string[] args)
         {
-
             var taxiCompany = new TaxiCompany("Seven Taxi", 150, "Full season offert");
             taxiCompany.Attach(new ManageDeparatement("Manage departament"));
             taxiCompany.Attach(new DispatchDepartament("Dispatch departament"));

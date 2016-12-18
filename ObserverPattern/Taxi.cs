@@ -4,8 +4,8 @@ using System.Collections.Generic;
 namespace ObserverPattern
 {
     public abstract class Taxi
-    {     
-        private List<IDepartament> _departaments = new List<IDepartament>();
+    {
+        private readonly List<IDepartament> _departaments = new List<IDepartament>();
         private string _message;
         private double _price;
 
@@ -14,26 +14,6 @@ namespace ObserverPattern
             Type = type;
             _price = price;
             _message = message;
-        }
-
-        public void Attach(IDepartament departament)
-        {
-            _departaments.Add(departament);
-        }
-
-        public void Detach(IDepartament departament)
-        {
-            _departaments.Remove(departament);
-        }
-
-        public void Notify()
-        {
-            foreach (IDepartament departament in _departaments)
-            {
-                departament.Update(this);
-            }
-
-            Console.WriteLine("");
         }
 
         public double Price
@@ -57,16 +37,30 @@ namespace ObserverPattern
             {
                 _message = value;
 
-                foreach (IDepartament departament in _departaments)
-                {
+                foreach (var departament in _departaments)
                     if (departament.GetType().Name.Equals("DispatchDepartament"))
-                    {
                         departament.Update(this);
-                    }       
-                }         
             }
         }
 
         public string Type { get; }
+
+        public void Attach(IDepartament departament)
+        {
+            _departaments.Add(departament);
+        }
+
+        public void Detach(IDepartament departament)
+        {
+            _departaments.Remove(departament);
+        }
+
+        public void Notify()
+        {
+            foreach (var departament in _departaments)
+                departament.Update(this);
+
+            Console.WriteLine("");
+        }
     }
 }
